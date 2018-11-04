@@ -1,5 +1,5 @@
-# Laundry Managment System
-JAVA based web application for laundry managment
+# Laundry Management System
+JAVA based web application for laundry management
 ##### Technologies used:
 * Spring
 * Hibernate
