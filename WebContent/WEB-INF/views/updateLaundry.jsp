@@ -6,21 +6,21 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Update Laundry Form Status</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<style><%@include file="/css/bootstrap.min.css"%></style>
+	<style><%@include file="/css/materialize.min.css"%></style>
+	
 </head>
 <body>
 <nav>
     <div class="nav-wrapper teal lighten-1">
-     <a href="#" class="brand-logo"> LMS</a>
+    <p class="brand-logo" style="font-family:'Passion One'; padding-left: 30px;">LMS</p>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-      	<li><a class="btn" href="/ALMS">Home</a></li>
-        <li><a class="btn" href="add.html">Apply a Laundry Form</a></li>
-        <li><a class="btn" href="laundries.html">List of Laundry Form</a></li>
-        </ul>
+      <li><a class="btn" href="/ALMS">Home</a></li>
+       <li><a class="btn" href="add.html">Apply a Laundry Form</a></li>
+       <li><a class="btn" href="laundries.html">List of Laundry Form</a></li>
+       </ul>
     </div>
-</nav>
+  </nav>
 
 <div class="container">
 

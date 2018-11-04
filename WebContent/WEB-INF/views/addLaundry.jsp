@@ -7,14 +7,15 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Laundry Form</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-	<script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"> </script> 
+	<style><%@include file="/css/bootstrap.min.css"%></style>
+	<style><%@include file="/css/materialize.min.css"%></style>
+  	<link href='https://fonts.googleapis.com/css?family=Patrick Hand' rel='stylesheet'>
+  	<link href='https://fonts.googleapis.com/css?family=Passion One' rel='stylesheet'>
   </head>
 <body>
 <nav>
     <div class="nav-wrapper teal lighten-1">
-     <p  class="brand-logo">   ALMS</p>
+     <p  class="brand-logo" style="font-family:'Passion One'; padding-left: 30px;">LMS</p>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
       	<li><a class="btn" href="/ALMS">Home</a></li>
         <li><a class="btn" href="laundries.html">Laundry Form List</a></li>
@@ -23,7 +24,7 @@
   </nav>
         
 	<div class="container">
-		<h2>Laundry Form</h2>
+		<h2 style="font-family:'Patrick Hand';">Laundry Form</h2>
 		<form:form method="POST" action="/ALMS/save.html">
 		<div class="container-fluid">
 		<div class="row">

@@ -7,18 +7,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Laundry Management</title>
- 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
- 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<style><%@include file="/css/bootstrap.min.css"%></style>
+<style><%@include file="/css/materialize.min.css"%></style>
+<link href='https://fonts.googleapis.com/css?family=Carter One' rel='stylesheet'>
 </head>
-<body>
+
+<body background="<c:url value='/images/washing.png'/>" style="background-repeat: no-repeat; background-size: cover;" >
 <div class="jumbotron ">
 <div class="container" style=" text-align:center;">
-    <h2>Laundry Managment System</h2>
+    <h2 style="font-family: 'Carter One'">Laundry Management System</h2>
  	<a class="btn waves-effect waves-light btn-large" href="add.html" >Apply a Laundry Form</a>
  	<a class="btn waves-effect waves-light btn-large" href="laundries.html" >Laundry Form List</a>
 </div>
 </div>
+<div class="container fluid" >
 
+</div>
 </body>
 </html>
