@@ -17,6 +17,8 @@ import com.alms.bean.LaundryBean;
 import com.alms.model.Laundry;
 import com.alms.service.LaundryService;
 
+import com.alms.twiliosms.TwilioSms;
+
 @Controller
 public class LaundryController {
 	
@@ -41,9 +43,7 @@ public class LaundryController {
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
 	public ModelAndView addLaundry(@ModelAttribute("command")  LaundryBean laundryBean,
 			BindingResult result) {
-		Map<String, Object> model = new HashMap<String, Object>();
-		model.put("laundrys",  prepareListofBean(laundryService.listLaundrys()));
-		return new ModelAndView("addLaundry", model);
+		return new ModelAndView("addLaundry");
 	}
 	
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
@@ -66,6 +66,15 @@ public class LaundryController {
 		laundryService.deleteLaundry(prepareModel(laundryBean));
 		return new ModelAndView("addLaundry", model);
 	}
+	
+	@RequestMapping(value = "/update", method = RequestMethod.GET)
+	public ModelAndView updateLaundry (@ModelAttribute("command")  LaundryBean laundryBean, 
+			BindingResult result ){
+		Map<String, Object> model = new HashMap<String, Object>();
+		model.put("laundry", prepareLaundryBean(laundryService.getLaundry(laundryBean.getId())));
+		return new ModelAndView("updateLaundry",model);
+	}
+	
 	
 	private Laundry prepareModel(LaundryBean laundryBean){
 		Laundry laundry = new Laundry();

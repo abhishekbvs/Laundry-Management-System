@@ -20,10 +20,16 @@
        <li><a class="btn" href="laundries.html">List of Laundry Form</a></li>
        </ul>
     </div>
-  </nav>
+ </nav>
 
 <div class="container">
-
+	<form:form method="POST" action="/ALMS/save.html">
+	<h3>Update Status</h3>
+	<form:label path="name"><h6>Name</h6></form:label>
+	<form:input path="name" value="${laundry.name}" readonly="true"/>
+	<button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+	</form:form>
+	
 </div>
 </body>
 </html>
