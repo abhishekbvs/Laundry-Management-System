@@ -10,4 +10,4 @@ JAVA based web application for laundry management
 Open your terminal and enter the command
 ```console
 git clone https://github.com/abhishekbvs/laundry-management-system.git
-console
+```
