@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class-diagram version="1.2.2" icons="true" automaticImage="JPEG" always-add-relationships="false" 
-  generalizations="true" realizations="true" associations="true" dependencies="false" nesting-relationships="true" 
-  router="FAN">  
+<class-diagram version="1.2.2" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="com.alms.bean.LaundryBean" project="alms" 
     file="/alms/src/com/alms/bean/LaundryBean.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="829" y="185"/>    
