@@ -33,16 +33,20 @@
 				<form:input path="name" value="${laundry.name}"/>
 			</div>
 			<div class = "col-6">
-				<form:label path="batch"><h6>Batch</h6></form:label>
-	            <form:input path="batch" value="${laundry.batch}"/>
+				<form:label path="phno"><h6>Phone No.</h6></form:label>
+	            <form:input path="phno" value="${laundry.phno}"/>
 			</div>
 		</div>
 		<div class = "row">
-			<div class = "col-6">
+			<div class = "col-4">
+				<form:label path="batch"><h6>Batch</h6></form:label>
+	            <form:input path="batch" value="${laundry.batch}"/>
+			</div>
+			<div class = "col-4">
 				<form:label path="hostel"><h6>Hostel</h6></form:label>
 				<form:input path="hostel" value="${laundry.hostel}"/>
 			</div>
-			<div class = "col-6">
+			<div class = "col-4">
 				<form:label path="room"><h6>Room</h6></form:label>
 				<form:input path="room" value="${laundry.room}"/>
 			</div>
@@ -98,29 +102,20 @@
 	      		  </label>
 			 	  </div>
 		 	</div>
-			 <div class="col-3">
-			 	<form:label path="total_items"><h6>Total No. of Items</h6></form:label>
+			 <div class="col-4">
+			 	<form:label path="total_items"><h6>Ironing</h6></form:label>
 				<form:input id="o1" path="total_items" readonly="true" value="${laundry.total_items}"/>
 			 </div>
-			 <div class="col-3">
+			 <div class="col-5">
 			 	<form:label path="total_items"><h6>Total Amount </h6></form:label>
 				<form:input id="o2" path="total_amount" readonly="true" value="${laundry.total_amount}"/>
 			 </div>
-			 <div class="col-3">
-			 	<label><h6>Status</h6></label>
-                <select name="status" class = "browser-default">
-                     <option value = "" disabled selected>Update Status</option>
-                     <option value = "Washing">Washing in Progress</option>
-                     <option value = "Ironing">Ironing in progress</option>
-                     <option value = "Laundry Done">Laundry Done</option>
-                     <option value = "Payment Done">Payment Done</option>
-                  </select>
-			 </div>
+			 
 		 </div>
         
 		<div class="row" >
 		 	<a class="btn waves-effect waves-light" href="javascript: void(0)" onClick="calc()" >Calculate </a>   
-			<button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+			<button class="btn waves-effect waves-light" type="submit" value="save" name="save">Submit</button>
 	   	</div>
        </div>
        </form:form>
@@ -138,20 +133,20 @@ function calc(){
 	   var t8 = Number(document.getElementById('i8').value);var wa8=5;var ir8=0;
 	   document.getElementById('o1').value = t1+t2+t3+t4+t5+t6+t7+t8;
 	   if ((document.getElementById('i9').checked) && (document.getElementById('i10').checked)) {
-		   document.getElementById('i9').value = 1; document.getElementById('i10').value = 1;
+		   document.getElementById('i9').value = "Yes"; document.getElementById('i10').value = "Yes";
 		   document.getElementById('o2').value = (wa1+ir1)*t1+(wa2+ir2)*t1+(wa3+ir3)*t3+(wa4+ir4)*t4+(wa5+ir5)*t5+(wa6+ir6)*t6+(wa7+ir7)*t7+(wa8+ir8)*t8;
        } 
 	   else if(document.getElementById('i9').checked){
-		   document.getElementById('i9').value = 1; document.getElementById('i10').value = 0;
+		   document.getElementById('i9').value = "Yes"; document.getElementById('i10').value = "No";
 		   document.getElementById('o2').value = (wa1)*t1+(wa2)*t1+(wa3)*t3+(wa4)*t4+(wa5)*t5+(wa6)*t6+(wa7)*t7+(wa8)*t8;
        }
 	   else if (document.getElementById('i10').checked){
-		   document.getElementById('i9').value = 0; document.getElementById('i10').value = 1;
+		   document.getElementById('i9').value = "No"; document.getElementById('i10').value = "Yes";
 		   document.getElementById('o2').value =(ir1)*t1+(ir2)*t1+(ir3)*t3+(ir4)*t4+(ir5)*t5+(ir6)*t6+(ir7)*t7+(ir8)*t8;                                                     
        }
-	   else{
-		   document.getElementById('i9').value = 0; document.getElementById('i10').value = 0;
-		   
+	   else if (!(document.getElementById('i9').checked) && !(document.getElementById('i10').checked)){
+		   document.getElementById('i9').value = "No"; document.getElementById('i10').value = "No";
+		   document.getElementById('o2').value=0;
 	   }
 	}
 </script>

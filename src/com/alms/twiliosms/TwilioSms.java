@@ -10,6 +10,6 @@ public class TwilioSms {
 	public static void sendSMS(String ph, String body) {
 	    Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
 	    Message message = Message.creator(new PhoneNumber("+91"+ph), new PhoneNumber("+12537859095"), body).create();
-	   	System.out.println("Msg Sent with body "+body+" with id "+message.getSid());
+	   	System.out.println("Msg Sent with body "+body+" and the msg id is "+message.getSid());
 	  }
 }

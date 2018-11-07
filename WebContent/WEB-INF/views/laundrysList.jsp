@@ -45,7 +45,7 @@
 				<td><c:out value="${laundry.total_items}"/></td>
 				<td><c:out value="${laundry.total_amount}"/></td>
 				<td><c:out value="${laundry.status}"/></td>
-				<td align="center"> <a class="btn waves-effect waves-light" href="veiw.html?id=${laundry.id}">View</a> 
+				<td align="center"> 
 				<a class="btn waves-effect waves-light" href="update.html?id=${laundry.id}">Update</a>  
 				<a class="btn waves-effect waves-light" href="delete.html?id=${laundry.id}">Delete</a></td>
 			</tr>

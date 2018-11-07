@@ -35,10 +35,18 @@ public class Laundry implements Serializable {
 	private Integer towel;
 	private Integer total_items;
 	private Integer total_amount;
-	private Boolean washing;
-	private Boolean ironing;
+	private String washing;
+	private String ironing;
 	private String status;
-	
+	private String phno;
+
+	public String getPhno() {
+		return phno;
+	}
+	public void setPhno(String phno) {
+		this.phno = phno;
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -135,16 +143,16 @@ public class Laundry implements Serializable {
 	public void setTotal_amount(Integer total_amount) {
 		this.total_amount = total_amount;
 	}
-	public Boolean getWashing() {
+	public String getWashing() {
 		return washing;
 	}
-	public void setWashing(Boolean washing) {
+	public void setWashing(String washing) {
 		this.washing = washing;
 	}
-	public Boolean getIroning() {
+	public String getIroning() {
 		return ironing;
 	}
-	public void setIroning(Boolean ironing) {
+	public void setIroning(String ironing) {
 		this.ironing = ironing;
 	}
 	public String getStatus() {

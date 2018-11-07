@@ -25,11 +25,20 @@ public class LaundryController {
 	@Autowired
 	private LaundryService laundryService;
 	
-	@RequestMapping(value = "/save", method = RequestMethod.POST)
+	@RequestMapping(params="save",value = "/save", method = RequestMethod.POST)
 	public ModelAndView saveLaundry(@ModelAttribute("command") LaundryBean laundryBean, 
 			BindingResult result) {
 		Laundry laundry = prepareModel(laundryBean);
 		laundryService.addLaundry(laundry);
+		return new ModelAndView("redirect:/laundries.html");
+	}
+	
+	@RequestMapping(params="sms",value = "/save", method = RequestMethod.POST)
+	public ModelAndView saveSMSLaundry(@ModelAttribute("command") LaundryBean laundryBean, 
+			BindingResult result) {
+		Laundry laundry = prepareModel(laundryBean);
+		laundryService.addLaundry(laundry);
+		sendSMS(laundryBean);
 		return new ModelAndView("redirect:/laundries.html");
 	}
 	
@@ -79,6 +88,7 @@ public class LaundryController {
 	private Laundry prepareModel(LaundryBean laundryBean){
 		Laundry laundry = new Laundry();
 		laundry.setName(laundryBean.getName());
+		laundry.setPhno(laundryBean.getPhno());
 		laundry.setHostel(laundryBean.getHostel());
 		laundry.setRoom(laundryBean.getRoom());
 		laundry.setBatch(laundryBean.getBatch());
@@ -110,6 +120,7 @@ public class LaundryController {
 				bean = new LaundryBean();
 				
 				bean.setName(laundry.getName());
+				bean.setPhno(laundry.getPhno());
 				bean.setHostel(laundry.getHostel());
 				bean.setRoom(laundry.getRoom());
 				bean.setBatch(laundry.getBatch());
@@ -138,6 +149,7 @@ public class LaundryController {
 		LaundryBean bean = new LaundryBean();
 		
 		bean.setName(laundry.getName());
+		bean.setPhno(laundry.getPhno());
 		bean.setHostel(laundry.getHostel());
 		bean.setRoom(laundry.getRoom());
 		bean.setBatch(laundry.getBatch());
@@ -158,6 +170,15 @@ public class LaundryController {
 		bean.setId(laundry.getId());
 	
 		return bean;
+	}
+	
+	private void sendSMS(LaundryBean laundryBean) {
+		String body = new String();
+		String ph = laundryBean.getPhno();
+		body = "Mr."+laundryBean.getName()+" your laundry status is updated to "+laundryBean.getStatus()+". Clothes Given: "+laundryBean.getTotal_items()+", Total Amount: Rs."+laundryBean.getTotal_amount();
+		body = body+". -LMS";
+		TwilioSms.sendSMS(ph,body);
+		System.out.println("SMS Requested to Twilio");
 	}
 
 	
